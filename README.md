@@ -7,13 +7,12 @@ Demonstration of using AWS Macie to automate data security and data classificati
 - Installation of AWS CLI
 - Installation of Git CLI
 
-
-
 ## Usage
 
 1) Export ``AWS_ACCESS_KEY`` and ``AWS_SECRET_KEY`` to environment variables.
-1) Run ``terraform init`.
+1) Run ``terraform init``.
 1) Run ``terraform apply`` to provision ressources.
+1) Go to AWS Console and explore content. All resources deployed via this demo will have the same unique id associated. This ID will be with the outputs of the terraform provisioning.
 
 
 
