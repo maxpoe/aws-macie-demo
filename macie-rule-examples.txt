@@ -1,0 +1,18 @@
+
+{
+    "source": ["aws.macie"],
+    "detail-type": ["Macie Finding"],
+    "detail": {
+      "classificationDetails.severityDescription": ["High"]
+    }
+  }
+
+  
+// EventBridge rule to provision
+{
+    "source": ["aws.macie"],
+    "detail-type": ["Macie Finding"],
+    "detail": {
+      "findingType": ["SensitiveData:S3Object/Credentials"]
+    }
+  }
