@@ -123,6 +123,6 @@ AWS Macie offers powerful capabilities to enhance data privacy within your AWS e
 | Name | Description |
 |------|-------------|
 | <a name="output_resource_owner"></a> [resource\_owner](#output\_resource\_owner) | Name of the person who provisioned the resources for reference |
-| <a name="output_sns_email"></a> [sns\_email](#output\_sns\_email) | Name of the person who provisioned the resources for reference |
+| <a name="output_sns_email"></a> [sns\_email](#output\_sns\_email) | Email Address for SNS topic subscription |
 | <a name="email for SNS topic"></a> [unique\_session\_id\_for\_resources](#output\_unique\_session\_id\_for\_resources) | Unique ID of this demonstration for easy allocation |
 <!-- END_TF_DOCS -->
