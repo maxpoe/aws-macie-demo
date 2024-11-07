@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "macie_demo-bucket-sensitive" {
 
   tags = {
     Name      = "Macie Demo Sensitive Data Bucket"
-    createdBy = local.owner[0]
+    createdBy = var.owner
     createdAt = local.current_date
     Project   = local.project_name
   }
@@ -39,7 +39,7 @@ resource "aws_s3_bucket" "macie_demo-results-bucket" {
   force_destroy = true
   tags = {
     Name      = "Macie Demo Results Bucket"
-    createdBy = local.owner[0]
+    createdBy = var.owner
     createdAt = local.current_date
     Project   = local.project_name
   }

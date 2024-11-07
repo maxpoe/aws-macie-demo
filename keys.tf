@@ -3,7 +3,7 @@ resource "aws_kms_key" "macie_demo-kms-key" {
   description = "Macie Demo KMS Key"
   tags = {
     Name      = "Macie Demo KMS Key"
-    createdBy = local.owner[0]
+    createdBy = var.owner
     createdAt = local.current_date
     Project   = local.project_name
   }

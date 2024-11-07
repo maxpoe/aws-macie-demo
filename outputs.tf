@@ -3,5 +3,9 @@ output "unique_session_id_for_resources" {
 }
 
 output "resource_owner" {
-  value = local.owner[0]
+  value = var.owner
+}
+
+output "sns_email" {
+  value = var.email
 }

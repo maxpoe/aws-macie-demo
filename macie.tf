@@ -33,7 +33,7 @@ resource "aws_macie2_classification_job" "demo-job" {
   }
   depends_on = [aws_macie2_account.macie]
   tags = {
-    createdBy = local.owner[0]
+    createdBy = var.owner
     createdAt = local.current_date
     Project   = local.project_name
 

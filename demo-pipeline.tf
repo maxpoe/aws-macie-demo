@@ -4,7 +4,7 @@
 resource "aws_sns_topic" "macie_findings_topic" {
   name = "macie-findings-topic-${random_id.demo_unique-id.hex}"
   tags = {
-    createdBy = local.owner[0]
+    createdBy = var.owner
     createdAt = local.current_date
     Project   = local.project_name
 
@@ -14,7 +14,7 @@ resource "aws_sns_topic" "macie_findings_topic" {
 resource "aws_sns_topic_subscription" "email_subscription" {
   topic_arn = aws_sns_topic.macie_findings_topic.arn
   protocol  = "email"
-  endpoint  = "${local.owner[0]}@bridging-it.de"
+  endpoint  = var.email
 }
 
 // Create Lambda Function
@@ -50,7 +50,7 @@ resource "aws_iam_role" "lambda_role-macie" {
     })
   }
   tags = {
-    createdBy = local.owner[0]
+    createdBy = var.owner
     createdAt = local.current_date
     Project   = local.project_name
 
@@ -66,7 +66,7 @@ resource "aws_lambda_function" "macie_findings_function" {
   source_code_hash = filebase64sha256("lambda_function.zip")
 
   tags = {
-    createdBy = local.owner[0]
+    createdBy = var.owner
     createdAt = local.current_date
     Project   = local.project_name
 
@@ -90,7 +90,7 @@ resource "aws_cloudwatch_event_rule" "macie-findings_rule" {
   })
 
   tags = {
-    createdBy = local.owner[0]
+    createdBy = var.owner
     createdAt = local.current_date
     Project   = local.project_name
 

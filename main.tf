@@ -21,7 +21,6 @@ data "aws_caller_identity" "current" {}
 
 locals {
   user_arn          = data.aws_caller_identity.current.arn
-  owner             = regex(".*\\/([^@]+)@.*", local.user_arn) # Regex to get username from arn (Everything between the last backslash and the last @)
   current_timestamp = timestamp()
   current_date      = formatdate("YYYY-MM-DD", timestamp())
   project_name      = "AWS Macie Demo"
