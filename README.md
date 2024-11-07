@@ -9,9 +9,8 @@ In today’s cloud-driven world, data privacy is paramount. Sensitive informatio
   - [2. Key Features of AWS Macie](#2-key-features-of-aws-macie)
   - [3. Best Practices for Maximizing AWS Macie’s Effectiveness](#3-best-practices-for-maximizing-aws-macies-effectiveness)
 - [Implementing AWS Macie](#implementing-aws-macie)
-  - [Setup Architecture](#setup-architecture)
+  - [Demo Architecture](#demo-architecture)
   - [Requirements](#requirements)
-  - [Usage](#usage)
   - [Step-by-Step Guide](#step-by-step-guide)
 - [Conclusion](#conclusion)
 
@@ -46,7 +45,7 @@ To make the most of AWS Macie, consider these best practices:
 
 We’ll set up AWS Macie and integrate it with other AWS services. This guide walks through configuring Macie, automated with Terraform, and setting up monitoring pipelines, demonstrating Macie’s functionality with a structured example.
 
-### Setup Architecture
+### Demo Architecture
 
 The terraform script provisions a couple of cloud ressources while enabling Macie on all buckets in the account.
 
@@ -58,24 +57,20 @@ The terraform script provisions a couple of cloud ressources while enabling Maci
 - Installation of AWS CLI
 - Installation of Git CLI
 
-### Usage
+### Step-by-Step Guide
 
 1) Clone repo to your machine.
 1) Export ``AWS_ACCESS_KEY`` and ``AWS_SECRET_KEY`` to environment variables.
-2) Duplicate the ``variables.tfvars.example`` file, rename it to ``variables.tfvars`` and adjust the values for ``"email"``and ``"owner"``.
-3) Run ``terraform init``.
-4) Run ``terraform apply`` to provision ressources.
-5) Go to AWS Console and explore AWS Macie. All resources deployed via this demo will have the same unique id associated. This ID will be with the outputs of the terraform provisioning.
-
-### Step-by-Step Guide
-
-1) The script will incorporate an **unique_id** to help you identify your freshly created ressources in your AWS account. This ID is with the terraform outputs.
-2) You will recieve an email to the chosen address. Click ``confirm`` to be able to recieve notifications from AWS Macie.
-3) Begin by exploring the provisioned infrastructure on the AWS Console. Get familiar with the AWS Macie dashboard, where data insights and security findings are displayed. The dashboard provides a high-level overview of active jobs, classification results, and data risk assessments.
-4) Configure up a dedicated S3 bucket for storing Macie findings. This bucket is already created by the terraform script. Configure to store to this bucket in the AWS Macie console.
-5) There is already a recurring macie job created with the infrastructure. Go ahead and explore the job.
-6) Go ahead and create a new macie one time job to learn how to setup such a job.
-7) You already provisioned a findings processor pipeline with the terraform script. Go ahaed and explore this pipeline in AWS Evenbridge, AWS Lambda and AWS SNS. Refer to the terraform script to see what you've created.
+1) Duplicate the ``variables.tfvars.example`` file, rename it to ``variables.tfvars`` and adjust the values for ``"email"``and ``"owner"``.
+1) Run ``terraform init``.
+1) Run ``terraform apply`` to provision ressources.
+1) Go to AWS Console and explore AWS Macie. All resources deployed via this demo will have the same unique id associated. This ID will be with the outputs of the terraform provisioning.
+1) You will recieve an email to the chosen address. Click ``confirm`` to be able to recieve notifications from AWS Macie.
+1) Begin by exploring the provisioned infrastructure on the AWS Console. Get familiar with the AWS Macie dashboard, where data insights and security findings are displayed. The dashboard provides a high-level overview of active jobs, classification results, and data risk assessments.
+1) Configure up a dedicated S3 bucket for storing Macie findings. This bucket is already created by the terraform script. Configure to store to this bucket in the AWS Macie console.
+1) There is already a recurring macie job created with the infrastructure. Go ahead and explore the job.
+1) Go ahead and create a new macie one time job to learn how to setup such a job.
+1) You already provisioned a findings processor pipeline with the terraform script. Go ahaed and explore this pipeline in AWS Evenbridge, AWS Lambda and AWS SNS. Refer to the terraform script to see what you've created.
 
 ## Conclusion
 

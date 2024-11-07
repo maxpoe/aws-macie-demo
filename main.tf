@@ -1,6 +1,5 @@
 // AWS Macie Demo using Terraform IaC
-// Copyright (c) 24.09.2024 by Maximilian Pöhls, bridgingIT. 
-// www.bridgingIT.de
+// Copyright (c) 24.09.2024 by Maximilian Pöhls
 // -----------------------------------------------------------
 
 terraform {
